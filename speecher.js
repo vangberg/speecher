@@ -1,7 +1,6 @@
 $(document).ready(function() {
-  $(".slide").css("display", "none");
+  $(".slide, .step").css("display", "none");
   $(".slide:first").css("display", "inherit");
-  $(".step").css("display", "none");
 
   $("body").click(function() {
     next_step_or_slide();
@@ -20,7 +19,6 @@ $(document).ready(function() {
 
 function next_step_or_slide() {
   var current_slide = $(".slide:visible");
-  var current_step = current_slide.find(".step:visible:last");
   var next_step = current_slide.find(".step:hidden:first");
 
   if (next_step.length == 0) {
