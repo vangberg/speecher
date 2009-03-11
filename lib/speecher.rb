@@ -38,7 +38,7 @@ class Speecher
       body {
         font-family: sans-serif;
         font-size: 1.5em;
-        padding-top: 4em;
+        padding-top: 3em;
       }
       .slide {
         margin: 0 auto;
