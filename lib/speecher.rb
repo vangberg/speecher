@@ -7,7 +7,7 @@ class Speecher
 
   def initialize(markdown, template=:default)
     @markdown = File.open(markdown, "r").read
-    @markdown.gsub!("!step", "<span class='step'></span>")
+    @markdown.gsub!("!STEP", "<span class='step'></span>")
     @slides = Maruku.new(@markdown).to_html.split("<hr />")
   end
 
