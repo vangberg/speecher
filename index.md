@@ -17,14 +17,14 @@ Speecher has awesome features:
 
 * Steps! (Click/press key to see!) 
 * (Awh, steps!! Did you see it?) !STEP
-* Swooshy, glamurous effects !STEP
+* Swooshy, glamorous effects !STEP
 * Portability !STEP
 
 But, how do you make 'em? Continue to next slide! !STEP
 
 ***
 
-# Writing your presentation? Markdown!
+# Writing your presentation?
 
     # Title of awesome presentation
 
@@ -37,6 +37,12 @@ But, how do you make 'em? Continue to next slide! !STEP
 
     That indeed was easy, right?
 
+Put that in a file named `slides.md`, open up your console:
+
+    $ speecher slides.md slides.html
+
+And open your browser. JavaScript libraries are bundled in `js/`.
+
 But those cute steps? Continue to find out!
 
 ***
@@ -45,11 +51,22 @@ But those cute steps? Continue to find out!
 
 Simply insert a placeholder! Remember the list I showed before?
 
-    * This is your first step !STEP
-    * Let's add another .. !STEP
-    * And a third! !STEP
+    * This is your first step ! STEP
+    * Let's add another .. ! STEP
+    * And a third! ! STEP
 
-That's all there is to it. Next slide will have some links for you.
+(Remove the space between ! and STEP. I should fix this.)
+
+That's all there is to it. 
+
+***
+
+# Controlling your presentation
+
+* Proceed to next step/slide: mouse click or right arrow key
+* Go backwards: left arrow key
+
+Next slide will have some links for you.
 
 ***
 
