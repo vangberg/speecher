@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(".slide").css("display", "none");
+  $(".step").parent().hide();
   $(".slide:first").css("display", "inherit");
-  $(".step").css("display", "none");
 
   $("body").click(function() {
     next_step_or_slide();
@@ -20,8 +20,7 @@ $(document).ready(function() {
 
 function next_step_or_slide() {
   var current_slide = $(".slide:visible");
-  var current_step = current_slide.find(".step:visible:last");
-  var next_step = current_slide.find(".step:hidden:first");
+  var next_step = current_slide.find(".step").parent(":hidden:first");
 
   if (next_step.length == 0) {
     var next_slide = current_slide.next(".slide:hidden:first");
@@ -35,8 +34,8 @@ function next_step_or_slide() {
 
 function previous_step_or_slide() {
   var current_slide = $(".slide:visible");
-  var current_step = current_slide.find(".step:visible:last");
-  var visible_steps = current_slide.find(".step:visible");
+  var current_step = current_slide.find(".step").parent(":visible:last");
+  var visible_steps = current_slide.find(".step").parent(":visible");
 
   if (visible_steps.length == 0) {
     var previous_slide = current_slide.prev(".slide");

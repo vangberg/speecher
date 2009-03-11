@@ -1,63 +1,66 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/jquery-ui.min.js"></script>
-    <script src="speecher.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/speecher.js"></script>
     <style type="text/css">
       body {
         font-family: sans-serif;
         font-size: 1.5em;
+        padding-top: 4em;
       }
       .slide {
         margin: 0 auto;
-        width: 60%;
+        width: 70%;
       }
-      h1 {
-        margin-top: 1em;
+      h1, h2, h3, h4, h5, h6 {
         color: #2a2a2a;
       }
+      li {
+        line-height: 1.5em;
+      }
     </style>
-    <title>Speecher</title>
   </head>
   <body>
-    <div class="slide">
-      <h1>Speecher</h1>
-      <p>Speecher is a small piece of JavaScript for creating simple in-browser
-      presentations.</p>
-      <p>Click with the mouse or press right arrow to continue..</p>
-      <ul>
-        <li class="step">Simple, lightweight</li>
-        <li class="step">Built with jQuery</li>
-        <li class="step">Easy to use</li>
-        <li class="step">Custom styling, steps</li>
-      </ul>
-      <span class="step">More on the next slide - click to continue.</span>
-    </div>
-    <div class="slide">
-      <h1>Simple to use:</h1>
-      <pre>
-&lt;div class="slide"&gt;
-  &lt;h1&gt;This is the first slide!&lt;/h1&gt;
-  It has some awesome text..
-&lt;/div&gt;
+    
+      <div class="slide">
+        <h1 id='speecher'>Speecher</h1>
 
-&lt;div class="slide"&gt;
-  &lt;h1&gt;And here's another slide&lt;/h1&gt;
-  &lt;ul&gt;
-    &lt;li class="step"&gt;Using steps ..&lt;/li&gt;
-    &lt;li class="step"&gt;.. is easy&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-      </pre>
-      Make sure to include the latest jQuery, jQuery UI and speecher.js.
-    </div>
-    <div class="slide">
-      <h1>Get it!</h1>
-      <ul>
-        <li>Source at <a
-          href="http://github.com/ichverstehe/speecher">GitHub</a></li>
-        <li>Feature proposals, bugs, anything: harry@vangberg.name</li>
-      </ul>
-      Thank you for following!
+<p>Speecher consists of two parts:</p>
+
+<ul>
+<li>A JavaScript library making in-browser presentations available</li>
+
+<li>A script for transforming a Markdown file to slides</li>
+</ul>
+
+<p>Lightweight and built with jQuery and Ruby. Who needs Keynote!?</p>
+
+<p>(Click your mouse or press right arrow key to continue)</p>
+
+      </div>
+    
+      <div class="slide">
+        
+<h1 id='inbrowser_presentation'>In-browser presentation</h1>
+
+<p>Speecher has awesome features:</p>
+
+<ul>
+<li>Steps! (Click/press key to see!) <span class='step' /></li>
+
+<li>(Awh, steps!! Did you see it?) <span class='step' /></li>
+
+<li>Swooshy, glamurous effects <span class='step' /></li>
+
+<li>Portability <span class='step' /></li>
+</ul>
+
+<p>But, how do you make &#8216;em? Continue to next slide! <span class='step' /></p>
+
+      </div>
+    
   </body>
 </html>
