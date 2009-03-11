@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.join(File.dirname(File.expand_path(__FILE__)), '..',
+'lib')
+require 'rubygems'
+require 'speecher'
+
+s = Speecher.new(ARGV[0])
+s.slideshow
