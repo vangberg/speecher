@@ -46,6 +46,9 @@ class Speecher
       h1, h2, h3, h4, h5, h6 {
         color: #2a2a2a;
       }
+      li {
+        line-height: 1.5em;
+      }
     </style>
   </head>
   <body>
