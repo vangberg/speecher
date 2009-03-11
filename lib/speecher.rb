@@ -10,12 +10,12 @@ class Speecher
     @slides = Maruku.new(@markdown).to_html.split("<hr />")
   end
 
-  def slideshow
+  def slideshow(name="slideshow.html")
     Dir.mkdir("js") unless File.exists?("js")
     %w(jquery.min.js jquery-ui.min.js speecher.js).each do |file|
       File.copy(File.join(BASE_PATH, "js", file), File.join("js", file))
     end
-    File.open("slideshow.html", "w") do |f|
+    File.open(name, "w") do |f|
       f.write to_html
     end
   end
@@ -41,7 +41,7 @@ class Speecher
       }
       .slide {
         margin: 0 auto;
-        width: 60%;
+        width: 70%;
       }
       h1, h2, h3, h4, h5, h6 {
         color: #2a2a2a;

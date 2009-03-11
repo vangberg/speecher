@@ -5,4 +5,4 @@ require 'rubygems'
 require 'speecher'
 
 s = Speecher.new(ARGV[0])
-s.slideshow
+s.slideshow(ARGV[1])
