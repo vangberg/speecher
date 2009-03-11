@@ -1,5 +1,5 @@
 require 'erb'
-require 'rdiscount'
+require 'maruku'
 require 'ftools'
 
 class Speecher
@@ -7,7 +7,7 @@ class Speecher
 
   def initialize(markdown, template=:default)
     @markdown = File.open(markdown, "r").read
-    @slides = RDiscount.new(@markdown).to_html.split("<hr />")
+    @slides = Maruku.new(@markdown).to_html.split("<hr />")
   end
 
   def slideshow
@@ -26,33 +26,35 @@ class Speecher
   end
 
   TEMPLATE = <<-EOF
-    <html>
-      <head>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/speecher.js"></script>
-        <style type="text/css">
-          body {
-            font-family: sans-serif;
-            font-size: 1.5em;
-            padding-top: 4em;
-          }
-          .slide {
-            margin: 0 auto;
-            width: 60%;
-          }
-          h1, h2, h3, h4, h5, h6 {
-            color: #2a2a2a;
-          }
-        </style>
-      </head>
-      <body>
-        <% @slides.each do |slide| %>
-          <div class="slide">
-            <%= slide %>
-          </div>
-        <% end %>
-      </body>
-    </html>
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/speecher.js"></script>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        padding-top: 4em;
+      }
+      .slide {
+        margin: 0 auto;
+        width: 60%;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: #2a2a2a;
+      }
+    </style>
+  </head>
+  <body>
+    <% @slides.each do |slide| %>
+      <div class="slide">
+        <%= slide %>
+      </div>
+    <% end %>
+  </body>
+</html>
   EOF
 end
