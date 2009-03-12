@@ -1,11 +1,13 @@
 $(document).ready(function() {
-  $(".slide").css("display", "none"); $(".step").parent().hide();
+  $(".slide").css("display", "none"); 
   $(".slide:first").css("display", "inherit");
   $("#control a:first").addClass("active");
+  $(".step").parent().hide();
 
   $("body").click(function() {
     next_step_or_slide();
   })
+
   $("body").keydown(function(e) {
     switch (e.keyCode) {
       case 39:
@@ -67,8 +69,12 @@ function transition(to) {
   }
 
   from.hide("slide", { direction: from_direction }, 500);
-  $("#control a[href=#" + from[0].id + "]").removeClass("active");
-  $("#control a[href=#" + to[0].id + "]").addClass("active");
   to.animate({border: "inherit"}, 500). // Stupid trick.
     show("slide", { direction: to_direction }, 500);
+  change_active_control(from, to);
+}
+
+function change_active_control(from, to) {
+  $("#control a[href=#" + from[0].id + "]").removeClass("active");
+  $("#control a[href=#" + to[0].id + "]").addClass("active");
 }
