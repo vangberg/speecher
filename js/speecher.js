@@ -19,10 +19,14 @@ $(document).ready(function() {
     }
   })
 
-  $("#control a").click(function() {
-    var next_id = $(this).html();
-    var next = $("#" + next_id);
-    transition(next);
+  $("#control a").click(function(e) {
+    if ($(this).hasClass("active")) {
+      e.stop();
+    } else {
+      var next_id = $(this).html();
+      var next = $("#" + next_id);
+      transition(next);
+    }
   })
 })
 
