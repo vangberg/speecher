@@ -7,7 +7,7 @@ class Speecher
 
   def initialize(markdown, template=:default)
     @markdown = File.open(markdown, "r").read
-    @markdown.gsub!("!STEP", "<span class='step'></span>")
+    @markdown.gsub!("!STEP", "<span class='step'> </span>")
     @slides = Maruku.new(@markdown).to_html.split("<hr />")
   end
 
@@ -51,14 +51,35 @@ class Speecher
       li {
         line-height: 1.5em;
       }
+      #control {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0.8em;
+      }
+      #control a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      #control a.active {
+        color: #555;
+      }
     </style>
   </head>
   <body>
-    <% @slides.each do |slide| %>
-      <div class="slide">
+    <% @slides.each_with_index do |slide,i| %>
+      <div class="slide" id="<%= i + 1 %>">
         <%= slide %>
       </div>
     <% end %>
+
+    <div id="control">
+      <% @slides.each_index do |i| %>
+        <a href="#<%= i + 1%>"><%= i + 1 %></a>
+      <% end %>
+    </div>
   </body>
 </html>
   EOF
