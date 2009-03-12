@@ -22,11 +22,26 @@
       li {
         line-height: 1.5em;
       }
+      #control {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0.8em;
+      }
+      #control a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      #control a.active {
+        color: #555;
+      }
     </style>
   </head>
   <body>
     
-      <div class="slide">
+      <div class="slide" id="1">
         <h1 id='speecher'>Speecher</h1>
 
 <p>Speecher consists of two parts:</p>
@@ -43,7 +58,7 @@
 
       </div>
     
-      <div class="slide">
+      <div class="slide" id="2">
         
 <h1 id='inbrowser_presentation'>In-browser presentation</h1>
 
@@ -52,18 +67,18 @@
 <ul>
 <li>Steps! (Click/press key to see!)</li>
 
-<li>(Awh, steps!! Did you see it?) <span class='step' /></li>
+<li>(Awh, steps!! Did you see it?) <span class='step'> </span></li>
 
-<li>Swooshy, glamorous effects <span class='step' /></li>
+<li>Swooshy, glamorous effects <span class='step'> </span></li>
 
-<li>Portability <span class='step' /></li>
+<li>Portability <span class='step'> </span></li>
 </ul>
 
-<p>But, how do you make &#8216;em? Continue to next slide! <span class='step' /></p>
+<p>But, how do you make &#8216;em? Continue to next slide! <span class='step'> </span></p>
 
       </div>
     
-      <div class="slide">
+      <div class="slide" id="3">
         
 <h1 id='writing_your_presentation'>Writing your presentation?</h1>
 
@@ -88,7 +103,7 @@ That indeed was easy, right?</code></pre>
 
       </div>
     
-      <div class="slide">
+      <div class="slide" id="4">
         
 <h1 id='adding_interactivity_eh_steps'>Adding interactivity (eh, steps)</h1>
 
@@ -104,7 +119,7 @@ That indeed was easy, right?</code></pre>
 
       </div>
     
-      <div class="slide">
+      <div class="slide" id="5">
         
 <h1 id='controlling_your_presentation'>Controlling your presentation</h1>
 
@@ -118,7 +133,7 @@ That indeed was easy, right?</code></pre>
 
       </div>
     
-      <div class="slide">
+      <div class="slide" id="6">
         
 <h1 id='outro'>Outro</h1>
 
@@ -131,5 +146,21 @@ That indeed was easy, right?</code></pre>
 <p>Enjoy!</p>
       </div>
     
+
+    <div id="control">
+      
+        <a href="#1">1</a>
+      
+        <a href="#2">2</a>
+      
+        <a href="#3">3</a>
+      
+        <a href="#4">4</a>
+      
+        <a href="#5">5</a>
+      
+        <a href="#6">6</a>
+      
+    </div>
   </body>
 </html>
