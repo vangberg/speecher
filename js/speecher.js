@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   $("#control a").click(function(e) {
     if ($(this).hasClass("active")) {
-      e.stop();
+      e.stopPropagation();
     } else {
       var next_id = $(this).html();
       var next = $("#" + next_id);
