@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "speecher"
-  s.version  = "0.2.2"
-  s.date     = "2009-03-12"
+  s.version  = "0.2.3"
+  s.date     = "2009-03-13"
   s.summary  = "in-browser presentations"
   s.email    = "harry@vangberg.name"
   s.homepage = "http://ichverstehe.github.com/speecher"
