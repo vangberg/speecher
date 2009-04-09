@@ -1,8 +1,14 @@
 $(document).ready(function() {
   $(".slide").css("display", "none"); 
-  $(".slide:first").css("display", "inherit");
-  $("#control a:first").addClass("active");
   $(".step").parent().hide();
+
+  var firstSlideID = "1";
+  if (window.location.hash.length > 0) {
+    var firstSlideID = window.location.hash.match(/#(\d?)/)[1];
+  }
+
+  $("#" + firstSlideID).css("display", "inherit");
+  $("#control a:eq(" + (firstSlideID - 1) + ")").addClass("active");
 
   $("body").click(function() {
     next_step_or_slide();
