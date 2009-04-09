@@ -73,7 +73,7 @@ function firstSlide() {
 function transition(to) {
   var from = $(".slide:visible");
 
-  if (from[0].id < to[0].id) {
+  if (parseInt(from[0].id) < parseInt(to[0].id)) {
     // Forward
     var from_direction = "left";
     var to_direction = "right";
