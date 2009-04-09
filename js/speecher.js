@@ -62,7 +62,7 @@ function previous_step_or_slide() {
 function firstSlide() {
   var firstSlideID = "1";
   if (window.location.hash.length > 0) {
-    var firstSlideID = window.location.hash.match(/#(\d?)/)[1];
+    var firstSlideID = window.location.hash.match(/#(\d+)/)[1];
   }
   var firstSlide = $("#" + firstSlideID);
   document.title = firstSlide.find("h1").html();
