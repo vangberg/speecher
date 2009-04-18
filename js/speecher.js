@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $(".slide").css("display", "none"); 
-  $(".slide:first").css("display", "inherit");
-  $("#control a:first").addClass("active");
   $(".step").parent().hide();
+
+  firstSlide();
 
   $("body").click(function() {
     next_step_or_slide();
@@ -59,10 +59,21 @@ function previous_step_or_slide() {
   }
 }
 
-function transition(to) {
-  from = $(".slide:visible");
+function firstSlide() {
+  var firstSlideID = "1";
+  if (window.location.hash.length > 0) {
+    var firstSlideID = window.location.hash.match(/#(\d+)/)[1];
+  }
+  var firstSlide = $("#" + firstSlideID);
+  document.title = firstSlide.find("h1").html();
+  firstSlide.css("display", "inherit");
+  $("#control a:eq(" + (firstSlideID - 1) + ")").addClass("active");
+}
 
-  if (from[0].id < to[0].id) {
+function transition(to) {
+  var from = $(".slide:visible");
+
+  if (parseInt(from[0].id) < parseInt(to[0].id)) {
     // Forward
     var from_direction = "left";
     var to_direction = "right";
@@ -75,6 +86,8 @@ function transition(to) {
   from.hide("slide", { direction: from_direction }, 500);
   to.animate({border: "inherit"}, 500). // Stupid trick.
     show("slide", { direction: to_direction }, 500);
+  document.title = to.find("h1").html();
+  window.location.hash = "#" + to[0].id;
   change_active_control(from, to);
 }
 
