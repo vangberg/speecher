@@ -77,10 +77,12 @@ function transition(to) {
     // Forward
     var from_direction = "left";
     var to_direction = "right";
+    to.find(".step").parent().hide();
   } else {
     // Rewind
     var from_direction = "right";
     var to_direction = "left";
+    to.find(".step").parent().show();
   }
 
   from.hide("slide", { direction: from_direction }, 500);
